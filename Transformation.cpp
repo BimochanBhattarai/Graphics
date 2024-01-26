@@ -1,3 +1,8 @@
+/*
+Author: Bimochan Bhattarai
+Please free to contact me if you find any mistake in the code.
+*/
+
 #include <graphics.h>
 #include <stdlib.h>
 #include <stdio.h>
