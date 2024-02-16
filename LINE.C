@@ -3,16 +3,21 @@
 #include <stdio.h>
 #include <conio.h>
 
-void drawTriangle(int x1, int y1, int x2, int y2, int x3, int y3)
+typedef struct Points{
+    int x;
+    int y;
+} Point;
+
+void drawTriangle(Point P1, Point P2, Point P3)
 {
-    line(x1, y1, x2, y2);
-    line(x2, y2, x3, y3);
-    line(x1, y1, x3, y3);
+    line(P1.x, P1.y, P2.x, P2.y);
+    line(P1.x, P1.y, P3.x, P3.y);
+    line(P2.x, P2.y, P3.x, P3.y);
 }
 
-void Transform(int x, int y, int tx, int ty)
+void Transform(Point P, int tx, int ty)
 {
-    int m1[3][3] = {1,0,tx,0,1,ty,0,0,1}, m2[3][3] = {x,y,1,0,0,0,0,0,0};
+    int m1[3][3] = {1,0,tx,0,1,ty,0,0,1}, m2[3][3] = {P.x,0,0,P.y,0,0,1,0,0};
 }
 
 void matMul(int a[3][3], int b[3][3], int mul[3][3])
